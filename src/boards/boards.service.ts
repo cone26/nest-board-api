@@ -33,4 +33,13 @@ export class BoardsService {
   deleteBoard(id: string): void {
     this.boards = this.boards.filter((board) => board.id !== id);
   }
+
+  //게시물 status 업데이트
+  updateBoardStatus(id: string, status: BoardStatus): Board {
+    // 먼저 해당 게시물을 찾아서
+    const board = this.getBoardById(id);
+    // 상태만 바꿔주기
+    board.status = status;
+    return board;
+  }
 }
