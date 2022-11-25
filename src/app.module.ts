@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { BoardsModule } from './boards/boards.module';
+import { typeORMConfig } from './boards/config/typeorm.config';
 
 @Module({
-  imports: [BoardsModule],
+  imports: [typeOrmModule.forRoot(typeORMConfig), BoardsModule],
   controllers: [],
   providers: [],
 })
